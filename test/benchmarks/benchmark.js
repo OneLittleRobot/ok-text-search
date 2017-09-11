@@ -46,7 +46,7 @@ const run = (data, callback) => {
             simpleSearch(data.text);
         })
         .add('custom', function () {
-            customSearch.search(data.text);
+            customSearch.exec(data.text);
         })
         .on('cycle', function (event) {
             console.log(String(event.target));

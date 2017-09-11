@@ -10,7 +10,7 @@ describe('Custom Aho Corasick Search', function () {
         it('assert correct phrases are found text ' + data.title, function () {
             search = new Search(searches[data.type]);
             search.build();
-            assert.deepEqual(search.search(data.text), data.result)
+            assert.deepEqual(search.exec(data.text), data.result)
         });
     })
 })

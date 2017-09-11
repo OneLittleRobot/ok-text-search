@@ -121,10 +121,10 @@ Search.prototype.add = function (phrase) {
 };
 
 Search.prototype.build = function (phrase) {
-    this.search = ahoCorasick(this._trie);
+    this.exec = ahoCorasick(this._trie);
 };
 
-Search.prototype.search = function () {
+Search.prototype.exec = function () {
     console.log('please build before searching');
     return [];
 };

@@ -6,6 +6,6 @@ module.exports = function (content) {
     }, new NodeAhoCorasick());
     ac.build();
     return (str) => {
-        return ac.search(str)
+        return ac.exec(str)
     };
 }
