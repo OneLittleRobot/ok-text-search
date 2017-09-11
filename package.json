@@ -1,0 +1,36 @@
+{
+    "name": "ok-text-search",
+    "version": "1.0.0",
+    "description": "An OK multiphrase text search",
+    "main": "index.js",
+    "scripts": {
+        "test": "./node_modules/.bin/mocha --compilers js:babel-core/register --reporter spec test",
+        "jshint": "./node_modules/.bin/jshint ./source/**.js ./test/**.js",
+        "build": "./node_modules/.bin/babel ./source --out-dir ./lib",
+        "benchmark": "node ./test/benchmarks/benchmark.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/OneLittleRobot/ok-text-search.git"
+    },
+    "bugs": {
+        "url": "https://github.com/OneLittleRobot/ok-text-search/issues"
+    },
+    "homepage": "https://github.com/OneLittleRobot/ok-text-search",
+    "keywords": [
+        "search",
+        "text"
+    ],
+    "author": "Kevin Thomas",
+    "license": "MIT",
+    "dependencies": {
+        "async": "^2.5.0",
+        "babel-cli": "^6.26.0",
+        "babel-preset-es2015": "^6.24.1",
+        "benchmark": "^2.1.4",
+        "chai": "^4.1.2",
+        "jshint": "^2.9.5",
+        "mocha": "^3.5.1",
+        "node-aho-corasick": "0.0.2"
+    }
+}

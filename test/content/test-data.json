@@ -1,0 +1,156 @@
+[
+    {
+        "title": "short foods 1",
+        "type": "foods",
+        "text": "Blueberry ipsum dolor sit amet, adipiscing elit.",
+        "result": [
+            {
+                "index": 0,
+                "text": "Blueberry"
+            }
+        ]
+    },
+    {
+        "title": "short foods 2",
+        "type": "foods",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing Onions. Sed varius id massa sit Sweet potatoes semper. Dragonfruit eros urna, sodales non suscipit iaculis, efficitur sed justo. Honeyberry Juniper hac habitasse platea dictumst. Proin sit amet commodo metus. Nullam blandit, nibh non tristique auctor, nibh ex dignissim enim, nec posuere sapien tellus in sem. Ut viverra, mauris hendrerit viverra ornare, augue ligula laoreet risus, sit amet lacinia augue lacus sed lorem. Praesent ut feugiat augue. Pellentesque auctor imperdiet nibh.",
+        "result": [
+            {
+                "index": 51,
+                "text": "Onions"
+            },
+            {
+                "index": 83,
+                "text": "Sweet potatoes"
+            },
+            {
+                "index": 106,
+                "text": "Dragonfruit"
+            },
+            {
+                "index": 180,
+                "text": "Honeyberry"
+            }
+        ]
+    },
+    {
+        "title": "medium foods 1",
+        "type": "foods",
+        "text": "Nullam velit arcu, Grapefruit eget facilisis nec, consectetur hendrerit nulla. Honeyberry pharetra, nulla nec ullamcorper venenatis, nisi magna vehicula enim, ac rutrum turpis velit in erat. Sed varius id massa sit amet semper. Dragonfruit eros urna, sodales non suscipit iaculis, efficitur sed justo. Honeyberry hac habitasse platea dictumst. Proin sit amet commodo metus. Nullam blandit, nibh non tristique auctor, nibh ex dignissim enim, nec posuere sapien tellus in sem. Ut viverra, mauris hendrerit viverra ornare, augue ligula laoreet risus, sit amet lacinia augue lacus sed lorem. Praesent ut feugiat augue. Pellentesque auctor imperdiet nibh. Proin sit amet commodo metus. Nullam blandit, nibh non tristique auctor, nibh ex dignissim enim, nec posuere sapien tellus in sem. Ut viverra, mauris hendrerit viverra ornare, augue ligula laoreet risus, sit amet lacinia augue lacus sed lorem. Praesent ut feugiat augue. Pellentesque auctor imperdiet nibh. Donec sagittis finibus dolor, eget sagittis libero sollicitudin ut. Quisque aliquam, ipsum nec auctor fringilla, metus lorem dictum velit, a dapibus sapien metus eu turpis. Donec non elit et elit molestie dignissim et sit amet enim. Cras quis mi consectetur, consequat ante sed, egestas arcu. Maecenas finibus facilisis est id mattis. Integer nec tristique est. Vivamus eros urna, sodales non suscipit iaculis, efficitur sed justo. In hac Star Wars dictumst. Maecenas quis ante erat. Maecenas scelerisque risus at nisl consequat, in mattis ex iaculis. Nunc vitae egestas nibh. Praesent et urna nulla.",
+        "result": [
+            {
+                "index": 19,
+                "text": "Grape"
+            },
+            {
+                "index": 19,
+                "text": "Grapefruit"
+            },
+            {
+                "index": 79,
+                "text": "Honeyberry"
+            },
+            {
+                "index": 228,
+                "text": "Dragonfruit"
+            },
+            {
+                "index": 302,
+                "text": "Honeyberry"
+            }
+        ]
+    },
+    {
+        "title": "medium movies 1",
+        "type": "movies",
+        "text": "Slumdog Millionaire dolor sit One Flew Over the Cuckoo's Nest, consectetur adipiscing elit. Star Wars id massa sit amet semper. Vivamus eros urna, sodales non suscipit iaculis, efficitur sed justo. In hac Star Wars dictumst. Maecenas quis ante erat. Maecenas scelerisque risus at nisl consequat, in mattis ex iaculis. Nunc vitae egestas nibh. Praesent et urna nulla. The Lord of the Rings: The Two Towers ac metus eu mi consectetur malesuada. Reservoir Dogs nec aliquam lectus, et pretium velit. Duis scelerisque Reservoir Dogs at augue convallis, bibendum viverra nibh viverra. Nullam velit arcu, pellentesque eget facilisis nec, consectetur hendrerit nulla. Nam pharetra, nulla nec ullamcorper venenatis, nisi magna vehicula enim, ac rutrum turpis velit in erat. Cras consequat, erat et gravida sagittis, leo nulla lobortis felis, eget volutpat ante ligula sed elit. Phasellus consequat est placerat ultrices rutrum. Sed luctus sagittis dapibus. Quisque vehicula nisl ac maximus facilisis. Proin dapibus tellus diam, sit amet tempor eros tincidunt nec. Aliquam mauris velit, hendrerit id dapibus at, finibus et sapien. Vivamus eu augue lacus. Cras posuere condimentum metus, in dictum turpis consequat nec. Aliquam eu mi sed lectus condimentum pretium. Quisque placerat suscipit diam, vel convallis justo efficitur viverra. Etiam sapien erat, fringilla sit amet pharetra nec, auctor in nunc. Pellentesque sollicitudin odio enim, non porta sem fermentum non. Duis commodo, odio sed vestibulum fermentum, tortor justo dictum elit, egestas feugiat velit mauris id sem. Vivamus eget massa eget ipsum consectetur fringilla. Donec ac maximus quam. Proin at purus odio. Suspendisse potenti. Nunc quis lectus eu arcu lobortis pretium. Fusce nec elit sapien. Quisque sit amet gravida est. Donec molestie pellentesque turpis. Aenean rhoncus tincidunt vehicula. In bibendum, magna a suscipit gravida, turpis lorem malesuada risus, a porta tortor nisl ac eros. Proin eu accumsan magna. Cras ut auctor tortor. Cras interdum in massa quis hendrerit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec arcu tellus, feugiat eu tellus ac, ultrices cursus metus. Pellentesque sit amet rutrum purus, sit amet ultricies eros. Vestibulum nisl nulla, euismod sit amet gravida eget, consequat sit amet metus. Nam nunc tellus, egestas consectetur tortor eget, ullamcorper pulvinar orci. The Wizard not of Oz at suscipit lacus, vel egestas lacus. Pellentesque pulvinar, nunc condimentum eleifend eleifend, lorem purus viverra diam, a fringilla leo nibh at massa. Sed condimentum, sem id imperdiet tincidunt, urna nibh finibus velit, rutrum tempor erat metus eget justo. Donec ac diam non ante luctus pharetra et condimentum est. Proin tincidunt purus neque, quis pellentesque enim dapibus ac. Vivamus id metus fringilla, hendrerit lorem id, mollis neque. Pellentesque feugiat lectus at lorem vestibulum, id tincidunt nisl fermentum. Praesent sapien ex, ultricies sit amet lacinia et, elementum et tellus. Reservoir Dogs at scelerisque est. Donec lobortis tortor eget tortor lobortis dignissim. Aliquam sed blandit ligula. Curabitur molestie accumsan maximus. Sed sollicitudin dictum magna, sed efficitur nisi faucibus elementum. Aenean tellus risus, sagittis eu nisi eu, eleifend laoreet ante. Mauris ornare nisi eget arcu vestibulum, et lacinia orci tristique. Duis gravida leo rutrum pellentesque elementum. Etiam a gravida velit. Nam viverra vulputate leo quis aliquam. Nam at turpis convallis, condimentum metus iaculis, tempor eros. Phasellus volutpat velit sit amet metus placerat mollis nec non turpis. Etiam nisi lorem, ullamcorper a nibh sed, eleifend iaculis nunc. Sed at enim vel diam varius pellentesque eget id sapien.",
+        "result": [
+            {
+                "index": 0,
+                "text": "Slumdog Millionaire"
+            },
+            {
+                "index": 30,
+                "text": "One Flew Over the Cuckoo's Nest"
+            },
+            {
+                "index": 92,
+                "text": "Star Wars"
+            },
+            {
+                "index": 205,
+                "text": "Star Wars"
+            },
+            {
+                "index": 367,
+                "text": "The Lord of the Rings: The Two Towers"
+            },
+            {
+                "index": 443,
+                "text": "Reservoir Dogs"
+            },
+            {
+                "index": 513,
+                "text": "Reservoir Dogs"
+            },
+            {
+                "index": 3024,
+                "text": "Reservoir Dogs"
+            }
+        ]
+    },
+    {
+        "title": "short quotes 1",
+        "type": "quotes",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id lectus eu purus tincidunt consectetur Strive not to be a success, but rather to be of value. –Albert Einstein tincidunt vel est.",
+        "result": [
+            {
+                "index": 110,
+                "text": "Strive not to be a success, but rather to be of value. –Albert Einstein"
+            }
+        ]
+    },
+    {
+        "title": "medium quotes 1",
+        "type": "quotes",
+        "text": "Lorem ipsum Nothing will work unless you do. -Maya Angelou dolor sit amet, consectetur adipiscing elit. If you want a thing done well, do it yourself. -Napoleon Bonaparte Suspendisse id lectus eu purus tincidunt consectetur tincidunt vel est. Fusce sed blandit ipsum. Maecenas enim ex, vulputate sit amet est ut, pharetra tempor elit. Donec consequat condimentum tellus, ac vestibulum velit consectetur quis. Proin sagittis mattis odio. Fusce finibus eu ipsum id auctor. Nullam eget purus in ligula malesuada sollicitudin sit amet id justo. Donec pellentesque malesuada felis ac euismod. Mauris eget ultrices tellus. Nullam ut lacus nulla. Donec tristique erat sit amet gravida fringilla. Nunc pretium nunc eu purus vestibulum, eleifend commodo lorem rutrum. Sed sodales neque dui, in rhoncus magna sagittis id. Phasellus et gravida sem, nec pretium purus. Never mistake activity for achievement. -John Wooden Phasellus elementum ultricies dui id condimentum. Vivamus non vehicula ex, a congue felis. Curabitur semper nulla gravida nibh euismod, sit amet tincidunt erat iaculis. Mauris hendrerit augue vitae odio imperdiet euismod. Vivamus consequat elit sit amet ex varius, at congue enim vulputate. Phasellus vulputate nunc ac commodo euismod. Cras sed rutrum leo, ac semper magna. Etiam enim neque, tincidunt vitae convallis sed, lacinia et ante. Ut tincidunt non odio a laoreet. Curabitur luctus eros eu turpis elementum, ac hendrerit nunc hendrerit. Donec suscipit convallis nunc in tempor. Etiam ultrices turpis quis rutrum pellentesque. Nullam quis nulla accumsan, sagittis dui nec, pulvinar magna Strive not to be a success, but rather to be of value. –Albert Einstein.",
+        "result": [
+            {
+                "index": 12,
+                "text": "Nothing will work unless you do. -Maya Angelou"
+            },
+            {
+                "index": 104,
+                "text": "If you want a thing done well, do it yourself. -Napoleon Bonaparte"
+            },
+            {
+                "index": 857,
+                "text": "Never mistake activity for achievement. -John Wooden"
+            },
+            {
+                "index": 1605,
+                "text": "Strive not to be a success, but rather to be of value. –Albert Einstein"
+            }
+        ]
+    },
+    {
+        "title": "long quotes 1",
+        "type": "quotes",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id lectus eu purus tincidunt consectetur tincidunt vel est. Fusce sed blandit ipsum. Maecenas enim ex, vulputate sit amet est ut, pharetra tempor elit. Donec consequat condimentum tellus, ac vestibulum velit consectetur quis. Proin sagittis mattis odio. Fusce finibus eu ipsum id auctor. Nullam eget purus in ligula malesuada sollicitudin sit amet id justo. Donec pellentesque malesuada felis ac euismod. Mauris eget ultrices tellus. Nullam ut lacus nulla. Donec tristique erat sit amet gravida fringilla. Nunc pretium nunc eu purus vestibulum, eleifend commodo lorem rutrum. Sed sodales neque dui, in rhoncus magna sagittis id. Phasellus et gravida sem, nec pretium purus. Phasellus elementum ultricies dui id condimentum. Vivamus non vehicula ex, a congue felis. Curabitur semper nulla gravida nibh euismod, sit amet tincidunt erat iaculis. Strive not to be a success, but rather to be of value. –Albert Einstein Mauris hendrerit augue vitae odio imperdiet euismod. Vivamus consequat elit sit amet ex varius, at congue enim vulputate. Phasellus vulputate nunc ac commodo euismod. Cras sed rutrum leo, ac semper magna. Etiam enim neque, tincidunt vitae convallis sed, lacinia et ante. Ut tincidunt non odio a laoreet. Curabitur luctus eros eu turpis elementum, ac hendrerit nunc hendrerit. Donec suscipit convallis nunc in tempor. Etiam ultrices turpis quis rutrum pellentesque. Nullam quis nulla accumsan, sagittis dui nec, pulvinar magna. Aenean pharetra justo et est auctor, nec finibus ex mollis. Nam vehicula convallis felis ac mollis. Suspendisse iaculis ex sit amet finibus vestibulum. Donec ligula massa, sodales nec luctus in, ultrices eget ipsum. Vivamus pretium mauris id enim rhoncus, sed lacinia libero molestie. Phasellus in tellus erat. Integer sit amet faucibus nisl. Etiam sollicitudin pellentesque accumsan. Maecenas vitae ipsum et lorem viverra consequat. Curabitur scelerisque eleifend leo, a rutrum turpis sodales vulputate. Praesent sed nunc facilisis, tempor metus vel, efficitur leo. Pellentesque at elit ante. Fusce tincidunt leo sit amet posuere congue. Maecenas sollicitudin purus purus, non lacinia orci commodo vel. Nullam vestibulum nisl risus, ut finibus felis rhoncus eu. Fusce a neque eget erat convallis congue. Phasellus non vulputate metus. Donec quam libero, condimentum in urna nec, maximus elementum leo. Phasellus libero diam, congue non hendrerit vitae, ornare sed ligula. Ut in turpis quis nisi scelerisque suscipit nec auctor mauris. Donec interdum efficitur eleifend. In commodo quam et tortor placerat iaculis. In fermentum porta libero, sed aliquam justo euismod ac. Nam malesuada vehicula lacus in ornare. Nam neque ipsum, dignissim eu pulvinar quis, facilisis eu ex. Nulla tristique tempor egestas. Proin sed malesuada lectus. Phasellus lorem augue, euismod a mollis sed, tempor ut quam. Proin vehicula quam ut mi pellentesque, rhoncus suscipit neque aliquet. Sed sed iaculis purus. Fusce consequat rhoncus lectus, sed fringilla purus efficitur vel. Donec semper tempus dapibus. Fusce a diam vitae justo bibendum vulputate vitae in metus. Nunc arcu nibh, viverra non fringilla vel, laoreet non massa. Quisque dignissim lacus neque, sit amet dictum nibh tristique ut. Quisque facilisis, orci id ullamcorper euismod, enim augue congue nunc, eget consequat ante tortor eleifend lectus. Cras ut aliquam nisl. Aliquam vitae auctor ipsum. Suspendisse ultrices accumsan dui, eget ullamcorper nibh vestibulum quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras pellentesque, ipsum pulvinar tempus dignissim, nibh massa pulvinar lacus, a vulputate diam tellus quis tortor. Nullam volutpat, orci sed ullamcorper porta, magna arcu accumsan massa, vitae viverra ex dolor at felis. Suspendisse rutrum lorem quis orci dignissim, id imperdiet lectus rhoncus. Nullam tincidunt ipsum ac turpis cursus suscipit. Sed posuere erat vitae nisi dictum euismod. Quisque mattis sollicitudin hendrerit. Cras malesuada justo vel lacus tincidunt placerat. Proin ut urna tincidunt, faucibus lectus vel, accumsan ipsum. Maecenas vel sodales turpis, ut facilisis massa. Vivamus luctus sollicitudin viverra. Sed cursus nulla ut erat pretium fringilla. In turpis ipsum, rutrum vitae mauris et, consequat bibendum nunc. Phasellus fringilla nulla arcu, sit amet pulvinar erat ornare sit amet. In sit amet imperdiet enim, ut volutpat dui. Quisque sit amet ex tortor. Maecenas ultrices ante eu dapibus feugiat. Vivamus tincidunt vulputate lorem. Sed id metus at erat bibendum congue ac ac nibh. Vivamus nec leo id ipsum pulvinar interdum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum cursus lectus nec ante tincidunt tempor. Proin a lorem in libero congue viverra. Sed eget dignissim enim, at vestibulum justo. Phasellus blandit a arcu eu feugiat. Nullam non imperdiet tortor. Nam id dictum diam, non mollis mauris. Nulla nec faucibus neque, et accumsan elit. Pellentesque odio ante, condimentum sit amet cursus eget, malesuada in lectus. Nullam sed lacus suscipit, feugiat magna eu, viverra arcu. Sed maximus felis vel eros blandit tempus. Sed ornare sem sit amet mauris aliquet posuere. Sed id erat consequat leo venenatis auctor. Cras fringilla fermentum accumsan. Donec molestie lorem non egestas iaculis. Nullam semper augue quis condimentum dapibus. Vestibulum quam est, elementum vel metus quis, rhoncus laoreet quam. Nam nec mollis sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce in tellus interdum, eleifend diam sit amet, ullamcorper lacus. Proin sit amet diam eleifend, rhoncus diam ut, tristique neque. Praesent pellentesque lectus diam. Nunc vulputate laoreet sapien eget bibendum. Vivamus cursus lorem et sapien hendrerit aliquam. Praesent bibendum mauris sit amet ligula egestas, ut ornare ligula sollicitudin. Ut ac mi enim. Nam lacus risus, auctor at lacus mollis, molestie luctus libero. Integer ullamcorper maximus sapien, et vestibulum lorem tristique et. Aenean maximus massa eu eros sagittis, sed porttitor ex laoreet. Sed dapibus ipsum justo, ut laoreet magna varius sed. Nulla facilisi. Phasellus eu augue aliquet, congue justo in, commodo neque. Aliquam vel sagittis lacus, nec tempor augue. Nullam ante lacus, vulputate eget enim ut, ultricies molestie mauris. Mauris dignissim tristique lacus a suscipit. Aenean tristique, ante eget tincidunt dictum, tortor arcu fringilla dui, a facilisis tellus nibh nec arcu. Quisque blandit ornare turpis. Quisque volutpat elit ac orci accumsan, et pellentesque velit sodales. Nam ante lorem, sollicitudin ut ipsum eu, sodales eleifend sapien. Ut blandit augue in turpis mollis convallis. Etiam nec porta mauris, eu vehicula justo. Integer congue scelerisque laoreet. Etiam pharetra finibus nisl, at dictum magna sollicitudin eu. Phasellus sapien elit, consequat sed bibendum non, efficitur quis lorem. Sed venenatis tortor turpis, non iaculis justo tristique et. Cras dignissim pharetra elementum. Quisque ac nisl quis lectus condimentum consectetur. Etiam eleifend fermentum malesuada. Ut accumsan, sapien eleifend condimentum laoreet, nibh libero mattis massa, nec fringilla velit augue quis nibh. Duis vel justo vel diam aliquam consequat eu eu velit. Sed facilisis at turpis eget interdum. Sed porttitor risus quis suscipit tempor. Morbi ut ipsum ut orci interdum pretium. Aliquam aliquet neque ac nulla gravida vulputate. Vestibulum pharetra, nulla vitae ullamcorper laoreet, ex erat ultrices augue, ac iaculis risus quam non nulla. Aliquam at imperdiet erat. Etiam ac ultrices tellus. Aenean hendrerit maximus volutpat. Mauris sapien ante, maximus tincidunt efficitur eu, pretium ut odio. Proin commodo arcu sit amet blandit consequat. Suspendisse eget sollicitudin enim. Praesent nec porta lacus, ac porttitor odio. Sed sagittis nunc sapien, ac commodo est posuere vel. Phasellus sed dolor consectetur, porttitor orci at, consequat lacus. Vivamus non nisi vel erat gravida tincidunt. Nunc consectetur convallis lorem, tincidunt ultricies lectus tempor ac. Nulla a vehicula dui. Etiam venenatis arcu id tortor faucibus lacinia. Mauris euismod erat eget egestas lobortis. Maecenas porta leo vel sollicitudin rutrum. Morbi commodo sodales ante, ac sollicitudin nisi consectetur in. Vivamus lacinia in nisl in malesuada. Integer sed elit vel eros eleifend faucibus eu ut odio. Vestibulum scelerisque scelerisque turpis sit amet euismod. Morbi sagittis semper est vel consequat. Cras purus felis, cursus sed posuere ac, venenatis a sapien. Curabitur vitae libero quis purus lacinia iaculis quis ut velit. Sed convallis tempor quam ut cursus. Cras lectus dolor, consectetur a mi sed, lacinia imperdiet turpis. Nunc sed nulla ultrices, vehicula enim gravida, imperdiet lectus. Phasellus volutpat neque nunc, iaculis lobortis nunc elementum in. Nulla suscipit maximus blandit. Integer pulvinar libero scelerisque, tempor nisi in, cursus metus. Aliquam maximus neque sed arcu facilisis blandit. Morbi tempor imperdiet mauris, a imperdiet odio ultricies et. Suspendisse auctor pulvinar fringilla. Proin placerat pharetra dui semper semper. Fusce a quam mollis, pharetra justo quis, lacinia orci. Integer quis porta metus. Nunc in tempus mauris. Sed et nisl eget lacus congue feugiat eget in sapien. Nulla pulvinar tellus quis sollicitudin efficitur. Duis finibus leo id bibendum feugiat. Mauris iaculis metus justo, vel imperdiet sem mattis id. Vivamus id dictum ex. Phasellus ultrices vulputate felis nec blandit. Nunc faucibus dignissim enim. Nulla et porttitor mauris, imperdiet auctor est. Vestibulum leo mauris, fermentum a placerat quis, congue nec sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras quam lorem, fringilla at tincidunt nec, pretium vitae urna. Nam magna nulla, vulputate ac faucibus ac, bibendum et leo. Aliquam imperdiet hendrerit lectus nec posuere. Curabitur rutrum volutpat tortor et luctus. If you do what you’ve always done, you’ll get what you’ve always gotten. –Tony Robbins Cras rhoncus auctor quam vel accumsan. Nulla quis sagittis libero, eu pulvinar neque. Donec at lectus elit. In vitae nisi at nisi molestie placerat. Aenean vehicula porttitor consectetur. Praesent at consequat ligula, nec porta leo. Etiam scelerisque magna et dolor malesuada, ut cursus orci feugiat. Etiam vehicula, nisl id tempus tincidunt, ipsum nibh hendrerit velit, ac cursus felis ligula vel enim. Curabitur mollis auctor ipsum vehicula sollicitudin. Quisque aliquam blandit nisl, at mattis ligula mattis nec. Phasellus non ullamcorper justo, at ornare quam. Mauris aliquet, neque in luctus condimentum, erat ante congue felis, non ornare elit magna ultricies erat. Donec semper accumsan sodales. Fusce elementum justo ut sem porttitor consequat. Vivamus et fermentum nisl. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti. Fusce at pellentesque lectus, ac cursus mi. Aliquam condimentum varius sollicitudin. Sed maximus tempus lacus, quis hendrerit erat iaculis vitae. Donec tristique in turpis ac condimentum. Sed et metus gravida, blandit dolor nec, eleifend tortor. Pellentesque dapibus mauris sit amet est mollis venenatis. Sed non lorem sem. Donec sagittis finibus dolor, eget sagittis libero sollicitudin ut. Quisque aliquam, ipsum nec auctor fringilla, metus lorem dictum velit, a dapibus sapien metus eu turpis. Donec non elit et elit molestie dignissim et sit amet enim. Cras quis mi consectetur, consequat ante sed, egestas arcu. Maecenas finibus facilisis est id mattis. Integer nec tristique est. Proin nec turpis eget leo eleifend pellentesque vitae ut ex. Maecenas risus ante, bibendum eget facilisis facilisis, pellentesque ac arcu. Sed quis fringilla metus. Aliquam convallis ligula vitae tellus facilisis, tempus malesuada sem convallis. Integer tempor purus non arcu molestie gravida. Aliquam erat volutpat. Nam in molestie turpis. Quisque dui dui, accumsan vitae tortor fermentum, gravida pharetra enim. Nam et libero feugiat, tristique nibh ac, vestibulum massa. Happiness is not something readymade. It comes from your own actions. –Dalai Lama Fusce vehicula enim vel risus semper commodo. Vivamus lobortis, risus ac lobortis vestibulum, sem dui finibus arcu, quis condimentum lectus turpis quis ipsum. Quisque non posuere mi. Phasellus imperdiet tempor sodales. Donec semper tortor a mattis auctor. Pellentesque sit amet sollicitudin ex. Morbi eu lacus eros. Donec sagittis finibus dolor, eget sagittis libero sollicitudin ut. Quisque aliquam, ipsum nec auctor fringilla, metus lorem dictum velit, a dapibus sapien metus eu turpis. Donec non elit et elit molestie dignissim et sit amet enim. Cras quis mi consectetur, consequat ante sed, egestas arcu. Maecenas finibus facilisis est id mattis. Integer nec tristique est. ",
+        "result": [
+            {
+                "index": 912,
+                "text": "Strive not to be a success, but rather to be of value. –Albert Einstein"
+            },
+            {
+                "index": 10035,
+                "text": "If you do what you’ve always done, you’ll get what you’ve always gotten. –Tony Robbins"
+            },
+            {
+                "index": 12170,
+                "text": "Happiness is not something readymade. It comes from your own actions. –Dalai Lama"
+            }
+        ]
+    }
+]
+
