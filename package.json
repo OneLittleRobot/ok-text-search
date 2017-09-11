@@ -4,7 +4,7 @@
     "description": "An OK multiphrase text search",
     "main": "index.js",
     "scripts": {
-        "test": "./node_modules/.bin/mocha --compilers js:babel-core/register --reporter spec test",
+        "test": "./node_modules/.bin/mocha --compilers js:babel-core/register --reporter spec test/utests",
         "jshint": "./node_modules/.bin/jshint ./source/**.js ./test/**.js",
         "build": "./node_modules/.bin/babel ./source --out-dir ./lib",
         "benchmark": "node ./test/benchmarks/benchmark.js"
