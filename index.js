@@ -1,1 +1,1 @@
-exports.bandsToNotation = require('./lib/search');;
+exports.default = require('./lib/search').default;
