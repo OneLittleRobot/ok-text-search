@@ -23,7 +23,7 @@
     ],
     "author": "Kevin Thomas",
     "license": "MIT",
-    "dependencies": {
+    "devDependencies": {
         "async": "^2.5.0",
         "babel-cli": "^6.26.0",
         "babel-preset-es2015": "^6.24.1",
