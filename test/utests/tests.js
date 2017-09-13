@@ -4,6 +4,7 @@ import searches from '../content/searches.json';
 import testData from '../content/test-data.json';
 
 describe('Custom Aho Corasick Search', function () {
+    this.timeout(10000);
     let search;
 
     testData.forEach(data => {
