@@ -1,6 +1,7 @@
 sudo: false
 language: node_js
 node_js:
+- '6'
 - '7'
 - '8'
 before_deploy:
@@ -9,11 +10,8 @@ deploy:
   provider: npm
   email: kevin@onelittlerobot.co.uk
   api_key:
-    secure: T+/ooMJl0bsnMXAE9eaAMuXxHTdZpsuwQvPQ1D9HMuLYYfBR+tTDVJQ2p+mvQHUepYbGE8KFc5GEnzUevJgiAzQWmQcmebNywZWCYZRDvRav5WEL08hfilF1zht4+DSiBuLoHrZ+UaoodF/G0bYa6hq+SeWQWZZV6ih23zzExjmLOZhia2FhVLHekc4MVvfN6oPzqYrYiUBwz4rf4Qr8Bxa5PZ9L8K+kq52T8k6ryOyulW0gl+Ho3mIwb7VKwrYqbHzXCZ7afMevV9mqXM55Vv8CEQjiyaXu6iAgcreyA73mn8XjRkKYSBp5zY7dM2GIqmcJywTm7s8QlyizQTA8gdg3U1aw/xXUo/TwbbR+LSB3MZ72qSVM+UJQWb0trPTLoH8+9UocFKtGAWo/kLiPHwfQVivOh+JT/NBnOAympHQ+D4jdlDcehUzChEbWDVq0mYEAVTCqLg92QiYHwLRhvpiNmbhWy6IlFTUDX1YEI3dwr2RLX2lY0Dw7vp27O4e+2SKJoiehWk0qdPiKAB16/hyya1ZgHH0a5nN+Z1OCfCfpURW/6RetWC+d03GrH2IovJLoM64OyD1GvokypcQJR1LRsH2BsTOqi4heL9MXYyg+uQUBo4oajBiUAO/K34tTShAwEfyvoXTvGsDgutPo+iClB5kTWbtSMW5s5s+ZIxo=
+    secure: T36l244GIx5Tw8XsFTBAWTRCHaVxxnXg0BOz9t4tdo8Jr4OzwgsLUbPo+afEUezrpX47AJbKBDS1/8/7xuaJYEp6I59EwA/h1CjuYjOJFR7zfFHnIjEN32SGYCVupDGTvIOSc5nOSqmt/A+PFy0tiRDtmBnirbW0Hb4J0bVK2QbX6rVb7irF9rJLW+N0mhfJZoo7+d8U53ZfH2LSkoffsLdGDARFjFRf5/kuEDviozG/TJQaRimOKwAMjfe4ZuHkUi/vm127mmlbAjZ9JFFfEESsb0t0XJUKKbaIPleya08aB9yz3uCGxlOLxFFN4yf5LnCra5y07paN/OGY4BXWkkVv3ikdW8Lq3gNqq+t+0qA+wv5MpSYoGD4jwq5sxfunwrzVCj+K7z5aydHhBr2o+kr847CnyywEFrCMdWofo4isjAknO9QmWqMtaQk1sWakZH5tGBktWswd07AIPsfHcjPn2k3JpIUyMmzpMrxRLRDE9DrU3F9XMTBw7/eRh+5LpJRnDQMQz5T04oO2l+SrLtUxwNhjxsqq8R3wCSr3jnObscYeAP6OM9NiQqEc/Ypx2LRvA4QQsrfeulmVaMEUmAsuuhOKzkz4J/j9CV7l5HqS+BvDgUNoS5xwAU8IXyY6LZfJQlpLzQFklCQnso1liLyx1qCnVbRldpa76vOxdJM=
   on:
     tags: true
     repo: OneLittleRobot/ok-text-search
     branch: master
-
-
-
