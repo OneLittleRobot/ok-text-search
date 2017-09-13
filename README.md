@@ -10,7 +10,7 @@ npm install ok-text-search
 ```
 
 ```js
-import OKTextSearch('ok-text-search');
+import OKTextSearch from 'ok-text-search';
 
 const textSearch= new OKTextSearch(['something','another thing']);
 textSearch.add('yet another thing');
