@@ -128,6 +128,38 @@ export class Search {
         }
         return runSearch(this._trie, text, this._normalize);
     }
+
+    execFirst(text: string): SearchResult | null {
+        if (!this._built) {
+            throw new Error('call build() before execFirst()');
+        }
+        const normalized = this._normalize(text);
+        let state = this._trie;
+        let i = 0;
+
+        for (let si = 0; si < normalized.length; ) {
+            const cp = normalized.codePointAt(si)!;
+            si += cp > 0xFFFF ? 2 : 1;
+
+            while (state !== this._trie && !state.getChild(cp)) {
+                state = state.fall!;
+            }
+
+            state = state.getChild(cp) ?? this._trie;
+
+            const node = state.isEnd ? state : state.dict;
+            if (node !== null) {
+                return {
+                    index: i - node.phraseLength + 1,
+                    text: node.phrase!,
+                };
+            }
+
+            i++;
+        }
+
+        return null;
+    }
 }
 
 export default Search;
