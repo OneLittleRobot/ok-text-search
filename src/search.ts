@@ -9,16 +9,10 @@ export interface SearchOptions {
 
 class TrieNode {
     readonly childNodes: Map<string, TrieNode> = new Map();
-    readonly char: string | null;
     isEnd: boolean = false;
-    parent: TrieNode | null = null;
     fall: TrieNode | null = null;
     phrase: string | null = null;
     phraseLength: number = 0;
-
-    constructor(char: string | null = null) {
-        this.char = char;
-    }
 
     getChild(char: string): TrieNode | null {
         return this.childNodes.get(char) ?? null;
@@ -31,8 +25,7 @@ function insertPhrase(root: TrieNode, phrase: string, normalize: (s: string) => 
     for (const char of chars) {
         let child = node.getChild(char);
         if (!child) {
-            child = new TrieNode(char);
-            child.parent = node;
+            child = new TrieNode();
             node.childNodes.set(char, child);
         }
         node = child;
@@ -45,9 +38,10 @@ function insertPhrase(root: TrieNode, phrase: string, normalize: (s: string) => 
 function buildFailureLinks(trie: TrieNode): void {
     const queue: TrieNode[] = [trie];
     trie.fall = trie;
+    let head = 0;
 
-    while (queue.length > 0) {
-        const node = queue.shift()!;
+    while (head < queue.length) {
+        const node = queue[head++];
         for (const [char, child] of node.childNodes) {
             if (node === trie) {
                 child.fall = trie;
