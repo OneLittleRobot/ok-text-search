@@ -3,6 +3,10 @@ export interface SearchResult {
     text: string;
 }
 
+export interface SearchOptions {
+    caseInsensitive?: boolean;
+}
+
 class TrieNode {
     readonly childNodes: Map<string, TrieNode> = new Map();
     readonly char: string | null;
@@ -21,8 +25,8 @@ class TrieNode {
     }
 }
 
-function insertPhrase(root: TrieNode, phrase: string): void {
-    const chars = [...phrase];
+function insertPhrase(root: TrieNode, phrase: string, normalize: (s: string) => string): void {
+    const chars = [...normalize(phrase)];
     let node = root;
     for (const char of chars) {
         let child = node.getChild(char);
@@ -62,9 +66,9 @@ function buildFailureLinks(trie: TrieNode): void {
     }
 }
 
-function runSearch(trie: TrieNode, text: string): SearchResult[] {
+function runSearch(trie: TrieNode, text: string, normalize: (s: string) => string): SearchResult[] {
     const results: SearchResult[] = [];
-    const chars = [...text];
+    const chars = [...normalize(text)];
     let state = trie;
 
     for (let i = 0; i < chars.length; i++) {
@@ -93,12 +97,14 @@ function runSearch(trie: TrieNode, text: string): SearchResult[] {
 
 export class Search {
     private readonly _trie: TrieNode;
+    private readonly _normalize: (s: string) => string;
     private _built: boolean = false;
 
-    constructor(content: string[] = []) {
+    constructor(content: string[] = [], options: SearchOptions = {}) {
+        this._normalize = options.caseInsensitive ? (s) => s.toLowerCase() : (s) => s;
         this._trie = new TrieNode();
         for (const phrase of content) {
-            insertPhrase(this._trie, phrase);
+            insertPhrase(this._trie, phrase, this._normalize);
         }
     }
 
@@ -106,7 +112,7 @@ export class Search {
         if (this._built) {
             throw new Error('Cannot add phrases after build(); create a new Search instance');
         }
-        insertPhrase(this._trie, phrase);
+        insertPhrase(this._trie, phrase, this._normalize);
     }
 
     build(): void {
@@ -118,7 +124,7 @@ export class Search {
         if (!this._built) {
             throw new Error('call build() before exec()');
         }
-        return runSearch(this._trie, text);
+        return runSearch(this._trie, text, this._normalize);
     }
 }
 

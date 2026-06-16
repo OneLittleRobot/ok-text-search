@@ -27,5 +27,5 @@
 ## Minor
 
 - [x] Remove double semicolon in `index.js`
-- [ ] Add case-insensitive search option
+- [x] Add case-insensitive search option
 - [ ] Deduplicate phrases on insert — adding the same phrase twice silently wastes trie nodes

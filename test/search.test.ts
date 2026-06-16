@@ -1,6 +1,7 @@
 import { assert } from 'chai';
 import { Search } from '../src/search';
 import type { SearchResult } from '../src/search';
+import type { SearchOptions } from '../src/search';
 
 interface TestCase {
     title: string;
@@ -115,6 +116,57 @@ describe('Search', function () {
             const search = new Search(['🎉🎊']);
             search.build();
             assert.deepEqual(search.exec('party 🎉🎊 time'), [{ index: 6, text: '🎉🎊' }]);
+        });
+    });
+
+    describe('case-insensitive search', function () {
+        const ci: SearchOptions = { caseInsensitive: true };
+
+        it('matches uppercase text against a lowercase phrase', function () {
+            const search = new Search(['hello'], ci);
+            search.build();
+            assert.deepEqual(search.exec('HELLO WORLD'), [{ index: 0, text: 'hello' }]);
+        });
+
+        it('matches lowercase text against a mixed-case phrase', function () {
+            const search = new Search(['Hello World'], ci);
+            search.build();
+            assert.deepEqual(search.exec('hello world'), [{ index: 0, text: 'Hello World' }]);
+        });
+
+        it('returns the original phrase casing in results', function () {
+            const search = new Search(['Star Wars'], ci);
+            search.build();
+            assert.deepEqual(search.exec('I love star wars!'), [{ index: 7, text: 'Star Wars' }]);
+        });
+
+        it('is case-sensitive by default', function () {
+            const search = new Search(['hello']);
+            search.build();
+            assert.deepEqual(search.exec('HELLO'), []);
+        });
+
+        it('finds multiple matches with mixed casing in text', function () {
+            const search = new Search(['cat'], ci);
+            search.build();
+            assert.deepEqual(search.exec('Cat CAT cat'), [
+                { index: 0, text: 'cat' },
+                { index: 4, text: 'cat' },
+                { index: 8, text: 'cat' },
+            ]);
+        });
+
+        it('add() respects the caseInsensitive option', function () {
+            const search = new Search([], ci);
+            search.add('Blueberry');
+            search.build();
+            assert.deepEqual(search.exec('I love BLUEBERRY pie'), [{ index: 7, text: 'Blueberry' }]);
+        });
+
+        it('reports correct index when match is in the middle of text', function () {
+            const search = new Search(['world'], ci);
+            search.build();
+            assert.deepEqual(search.exec('hello WORLD'), [{ index: 6, text: 'world' }]);
         });
     });
 });
