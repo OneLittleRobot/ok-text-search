@@ -39,12 +39,11 @@ The original phrase casing is preserved in results. Indices are in Unicode code 
 
 ## Benchmarks
 
-Two approaches are compared:
+Three approaches are compared:
 
-- **simple** — a naive loop calling `String.indexOf` for each phrase separately
-- **custom** — this library (Aho-Corasick)
-
-The benchmark does not include setup time (`build()`), only the per-search cost.
+- **simple** — naive loop calling `String.indexOf` for each phrase; no setup cost
+- **custom (exec only)** — this library, `build()` called once upfront, only `exec()` measured
+- **custom (build + exec)** — this library, `build()` + `exec()` measured together; what you pay if you rebuild on every search
 
 Run them yourself:
 
@@ -56,46 +55,43 @@ npm run benchmark
 
 ### Foods — short phrase list (~200 food names, 4–14 chars each)
 
-The phrase list is a large dictionary of food names. Short phrases are where V8's native `indexOf` is hardest to beat.
-
-| Test | Text | Matches | simple | custom | Result |
-|------|------|---------|--------|--------|--------|
-| short foods 1 | 48-char sentence containing one food name | 1 | 959K ops/s | 2,480K ops/s | **custom 61% faster** |
-| short foods 2 | 490-char paragraph with four food names | 4 | 382K ops/s | 203K ops/s | simple 47% faster |
-| medium foods 1 | 1,000-char text; includes "Grape" and "Grapefruit" at the same position (overlapping prefix match) | 5 | 197K ops/s | 68K ops/s | simple 65% faster |
+| Test | Text | Matches | simple | custom (exec only) | custom (build + exec) |
+|------|------|---------|--------|--------------------|-----------------------|
+| short foods 1 | 48-char sentence, 1 food name | 1 | 917K ops/s | 4,340K ops/s | 32.3K ops/s |
+| short foods 2 | 490-char paragraph, 4 food names | 4 | 362K ops/s | 394K ops/s | 29.4K ops/s |
+| medium foods 1 | 1,000-char text, 5 matches (incl. "Grape"/"Grapefruit" overlap) | 5 | 192K ops/s | 136K ops/s | 25.9K ops/s |
 
 ---
 
 ### Movies — multi-word titles (5–37 chars, spaces and punctuation)
 
-Phrases are movie titles like `One Flew Over the Cuckoo's Nest` and `The Lord of the Rings: The Two Towers`. Longer than food names but still under 40 chars.
-
-| Test | Text | Matches | simple | custom | Result |
-|------|------|---------|--------|--------|--------|
-| medium movies 1 | 3,800-char text with 8 title occurrences | 8 | 40K ops/s | 24K ops/s | simple 40% faster |
+| Test | Text | Matches | simple | custom (exec only) | custom (build + exec) |
+|------|------|---------|--------|--------------------|-----------------------|
+| medium movies 1 | 3,800-char text, 8 title occurrences | 8 | 39.0K ops/s | 43.4K ops/s | 6.6K ops/s |
 
 ---
 
 ### Quotes — full sentences (40–85 chars each)
 
-Phrases are complete quotations, e.g. `Strive not to be a success, but rather to be of value. –Albert Einstein`. This is where Aho-Corasick's advantage becomes decisive: `indexOf` must compare up to 85 characters per candidate position in the text, while Aho-Corasick touches each character of the text exactly once.
+Phrases are complete quotations, e.g. `Strive not to be a success, but rather to be of value. –Albert Einstein`.
 
-| Test | Text | Matches | simple | custom | Result |
-|------|------|---------|--------|--------|--------|
-| short quotes 1 | 200-char text containing one quote | 1 | 12.9K ops/s | 486K ops/s | **custom 37× faster** |
-| medium quotes 1 | 1,800-char text containing four quotes | 4 | 2.4K ops/s | 53.7K ops/s | **custom 22× faster** |
-| long quotes 1 | 12,000-char text containing three quotes | 3 | 348 ops/s | 6,717 ops/s | **custom 19× faster** |
+| Test | Text | Matches | simple | custom (exec only) | custom (build + exec) |
+|------|------|---------|--------|--------------------|-----------------------|
+| short quotes 1 | 200-char text, 1 match | 1 | 12.3K ops/s | 839K ops/s | 15.4 ops/s |
+| medium quotes 1 | 1,800-char text, 4 matches | 4 | 2.2K ops/s | 94.7K ops/s | 15.2 ops/s |
+| long quotes 1 | 12,000-char text, 3 matches | 3 | 336 ops/s | 10,692 ops/s | 13.7 ops/s |
 
 ---
 
 ### Reading the results
 
-The crossover is **phrase length**, not text length or phrase count:
+**`custom (build + exec)` loses to `simple` in every case.** Build cost is not free, and if you reconstruct the automaton on each search you'd have been better off with `indexOf`. For the quotes phrase set (long patterns → deep trie), `build()` runs at ~15 ops/sec while naive `indexOf` manages 336 ops/sec — simple wins by 24×.
 
-- **Short phrases (< ~20 chars)**: `indexOf` wins in most cases. V8's implementation is highly tuned for short patterns and the trie traversal overhead outweighs the algorithmic benefit.
-- **Long phrases (40+ chars)**: Aho-Corasick wins decisively, with 19–37× speedups observed. The gain grows with text length because the O(n) guarantee compounds over a longer scan.
+`build()` must be paid once and amortised over many `exec()` calls. Once it is:
 
-The one exception in the food tests (`short foods 1`) is because only a single phrase was present in the result set — the trie lookup for a single pattern is essentially free compared to the cost of scanning even a short string.
+- **Short phrases (< ~15 chars)**: `indexOf` can still edge ahead when the phrase count is large and matches are dense (`medium foods 1`, where ~200 names averaging ~8 chars are searched through 1,000 chars of text).
+- **Medium phrases (15–40 chars)**: break-even. Movie titles already favour Aho-Corasick.
+- **Long phrases (40+ chars)**: Aho-Corasick wins decisively — 31–67× faster in the quotes tests. `indexOf` must re-scan the text from every position for every phrase; Aho-Corasick touches each character exactly once regardless of phrase count.
 
 [ci-url]: https://github.com/OneLittleRobot/ok-text-search/actions/workflows/ci.yml
 [ci-image]: https://github.com/OneLittleRobot/ok-text-search/actions/workflows/ci.yml/badge.svg
