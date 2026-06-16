@@ -24,6 +24,14 @@
 - [x] Store matched phrase on terminal node at insert time — `findPhrase()` walks the parent chain on every match (O(k) per match); storing the phrase string during `add()` makes lookups O(1)
 - [x] Use strict equality (`===`) in `TrieNode.prototype.getChild` — `currentNode.char == str` uses loose equality
 
+## Performance
+
+- [x] Fix O(n²) BFS in `buildFailureLinks` — `Array.shift()` re-indexes the whole array on every pop; replaced with an index counter so the queue is append-only and the BFS is O(n)
+- [x] Remove dead `TrieNode.char` and `TrieNode.parent` fields — only needed by the old `findPhrase()` parent-chain walk; removing them shrinks every node's memory footprint
+- [ ] Add output links (dict suffix links) — precompute a `dict` pointer on each node during `build()` pointing to the nearest end-node ancestor in the failure chain; eliminates the inner `while (node !== trie)` loop for non-matching nodes, making search formally O(n + m + z). Affects `exec()` speed, measurable in benchmarks
+- [ ] Avoid materialising `[...text]` on every `exec()` call — allocates an array the length of the text on each search; for ASCII content, replace with `text.charCodeAt(i)` in the hot loop and store char codes in the trie instead of strings, skipping both the allocation and Map string-key hashing
+- [ ] Benchmark `build()` time separately — current benchmarks only cover `exec()`; the BFS and dead-field fixes only benefit `build()` and have no visible effect on the existing suite
+
 ## Minor
 
 - [x] Remove double semicolon in `index.js`
