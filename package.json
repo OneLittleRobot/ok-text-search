@@ -8,7 +8,10 @@
         "build": "tsc",
         "test": "mocha",
         "prepublishOnly": "npm run build",
-        "benchmark": "node ./test/benchmarks/benchmark.js"
+        "benchmark": "node ./test/benchmarks/benchmark.js",
+        "fetch-texts": "node ./test/scripts/fetch-winnie.js",
+        "benchmark:phrase-count": "node ./test/benchmarks/phrase-count.js",
+        "benchmark:case-insensitive": "node ./test/benchmarks/case-insensitive.js"
     },
     "repository": {
         "type": "git",

@@ -8,31 +8,36 @@ export interface SearchOptions {
 }
 
 class TrieNode {
-    readonly childNodes: Map<string, TrieNode> = new Map();
+    readonly childNodes: Map<number, TrieNode> = new Map();
     isEnd: boolean = false;
     fall: TrieNode | null = null;
+    dict: TrieNode | null = null;
     phrase: string | null = null;
     phraseLength: number = 0;
 
-    getChild(char: string): TrieNode | null {
-        return this.childNodes.get(char) ?? null;
+    getChild(cp: number): TrieNode | null {
+        return this.childNodes.get(cp) ?? null;
     }
 }
 
 function insertPhrase(root: TrieNode, phrase: string, normalize: (s: string) => string): void {
-    const chars = [...normalize(phrase)];
+    const normalized = normalize(phrase);
     let node = root;
-    for (const char of chars) {
-        let child = node.getChild(char);
+    let length = 0;
+    for (let si = 0; si < normalized.length; ) {
+        const cp = normalized.codePointAt(si)!;
+        si += cp > 0xFFFF ? 2 : 1;
+        length++;
+        let child = node.getChild(cp);
         if (!child) {
             child = new TrieNode();
-            node.childNodes.set(char, child);
+            node.childNodes.set(cp, child);
         }
         node = child;
     }
     node.isEnd = true;
     node.phrase = phrase;
-    node.phraseLength = chars.length;
+    node.phraseLength = length;
 }
 
 function buildFailureLinks(trie: TrieNode): void {
@@ -42,19 +47,20 @@ function buildFailureLinks(trie: TrieNode): void {
 
     while (head < queue.length) {
         const node = queue[head++];
-        for (const [char, child] of node.childNodes) {
+        for (const [cp, child] of node.childNodes) {
             if (node === trie) {
                 child.fall = trie;
             } else {
                 let fall = node.fall!;
-                while (fall !== trie && !fall.getChild(char)) {
+                while (fall !== trie && !fall.getChild(cp)) {
                     fall = fall.fall!;
                 }
-                child.fall = fall.getChild(char) ?? trie;
+                child.fall = fall.getChild(cp) ?? trie;
                 if (child.fall === child) {
                     child.fall = trie;
                 }
             }
+            child.dict = child.fall!.isEnd ? child.fall : child.fall!.dict;
             queue.push(child);
         }
     }
@@ -62,28 +68,30 @@ function buildFailureLinks(trie: TrieNode): void {
 
 function runSearch(trie: TrieNode, text: string, normalize: (s: string) => string): SearchResult[] {
     const results: SearchResult[] = [];
-    const chars = [...normalize(text)];
+    const normalized = normalize(text);
     let state = trie;
+    let i = 0;
 
-    for (let i = 0; i < chars.length; i++) {
-        const char = chars[i];
+    for (let si = 0; si < normalized.length; ) {
+        const cp = normalized.codePointAt(si)!;
+        si += cp > 0xFFFF ? 2 : 1;
 
-        while (state !== trie && !state.getChild(char)) {
+        while (state !== trie && !state.getChild(cp)) {
             state = state.fall!;
         }
 
-        state = state.getChild(char) ?? trie;
+        state = state.getChild(cp) ?? trie;
 
-        let node = state;
-        while (node !== trie) {
-            if (node.isEnd) {
-                results.push({
-                    index: i - node.phraseLength + 1,
-                    text: node.phrase!,
-                });
-            }
-            node = node.fall!;
+        let node: TrieNode | null = state.isEnd ? state : state.dict;
+        while (node !== null) {
+            results.push({
+                index: i - node.phraseLength + 1,
+                text: node.phrase!,
+            });
+            node = node.dict;
         }
+
+        i++;
     }
 
     return results;
@@ -119,6 +127,38 @@ export class Search {
             throw new Error('call build() before exec()');
         }
         return runSearch(this._trie, text, this._normalize);
+    }
+
+    execFirst(text: string): SearchResult | null {
+        if (!this._built) {
+            throw new Error('call build() before execFirst()');
+        }
+        const normalized = this._normalize(text);
+        let state = this._trie;
+        let i = 0;
+
+        for (let si = 0; si < normalized.length; ) {
+            const cp = normalized.codePointAt(si)!;
+            si += cp > 0xFFFF ? 2 : 1;
+
+            while (state !== this._trie && !state.getChild(cp)) {
+                state = state.fall!;
+            }
+
+            state = state.getChild(cp) ?? this._trie;
+
+            const node = state.isEnd ? state : state.dict;
+            if (node !== null) {
+                return {
+                    index: i - node.phraseLength + 1,
+                    text: node.phrase!,
+                };
+            }
+
+            i++;
+        }
+
+        return null;
     }
 }
 
